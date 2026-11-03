@@ -1,0 +1,10 @@
+# La configuración de este servicio (puerto 8065 y propiedades de Eureka) vive en el repositorio
+# logitrack-config, archivo eureka-server.yml, y la entrega el config-server al arrancar.
+# Acá solo queda lo necesario para saber quién es el servicio y dónde buscar su configuración.
+spring:
+  application:
+    name: eureka-server
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  config:
+    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"

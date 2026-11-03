@@ -1,0 +1,12 @@
+# Tests de eureka-server: sin config-server y sin registrarse en ningún lado.
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      enabled: false
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
